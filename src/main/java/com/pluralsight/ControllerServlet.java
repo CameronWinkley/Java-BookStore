@@ -125,12 +125,11 @@ public class ControllerServlet extends HttpServlet {
 		throws ServletException, IOException {
 
 		int id = Integer.parseInt(request.getParameter("id"));
-		bookDAO.showEditForm(id);
-		Book book = bookDAO.getBook(id);
+		Book existingBook = bookDAO.getBook(id);
 
-		RequestDispatcher requestdispatcher = getRequestDispatcher("/BookForm.jsp");
-		request.setAttribute("book", book);
-		requestdispatcher.forward(request, response);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/BookForm.jsp");
+		request.setAttribute("book", existingBook );
+		dispatcher.forward(request, response);
 
 
 		response.sendRedirect("list");
