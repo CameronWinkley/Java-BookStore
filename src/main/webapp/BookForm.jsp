@@ -33,9 +33,9 @@
     <input type="text" name="booktitle" value="<c:out value='${book.title}'/>" />
       </p>
 	  <p><label>Author:</label>
-    <input type="text" name="bookauthor" <c:out value="'${book.author}'/>"/></p>
+          <input type="text" name="bookauthor" value="<c:out value='${book.author}'/>" />
     <p><label>Price:</label>
-    <input type="text" name="bookprice" <c:out value="'${book.price}'/>" /></p>
+            <input type="text" name="bookprice" value="<c:out value='${book.price}'/>" /></p>
 	  <p><input type="submit" value="Submit"></p>
 	</form>
 
